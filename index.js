@@ -1,16 +1,16 @@
 const fs = require('fs') //module filesystem
 
-//to read from file
-let result = fs.readFileSync('some.txt', 'utf-8') // запускається синхронно
+//create folder syncronizly
+//fs.mkdirSync('text-files');
 
-//Example with callback inside
-/*fs.readFile('some.txt', 'utf-8', (err, data) => {
-  fs.writeFile('some.text', data + '\nSome text', (err, data) => {
-    console.log('Все сработало!')
-  })
-})*/
+//create folder async
+/*fs.mkdir('text-files', () => {
+  fs.writeFile('./text-files/some.txt', 'Hello', () => { })
+});*/
 
-console.log(result)
+//delete folder and
+fs.unlink('./text-files/some.txt', () => {
+  fs.rmdir('./text-files', () => { })
+})
 
-fs.writeFileSync('some.txt', result + '\nHello World!') // created file and added text inside (rewrite) / запускається синхронно
 
