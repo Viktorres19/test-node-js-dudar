@@ -1,7 +1,7 @@
 {
   "name": "test-node-js-dudar",
   "version": "1.0.0",
-  "description": "learning node js project",
+  "description": "test node js project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
