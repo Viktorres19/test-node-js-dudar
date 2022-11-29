@@ -1,9 +1,16 @@
-const os = require('os')
-let res = os.platform()
-console.log(res) // win32
+const fs = require('fs') //module filesystem
 
-const my_math = require('./modules/my_math')
-let res1 = my_math.add(4, 5)
-let res2 = my_math.add(3, 4)
-console.log(res1)
-console.log(res2)
+//to read from file
+let result = fs.readFileSync('some.txt', 'utf-8') // запускається синхронно
+
+//Example with callback inside
+/*fs.readFile('some.txt', 'utf-8', (err, data) => {
+  fs.writeFile('some.text', data + '\nSome text', (err, data) => {
+    console.log('Все сработало!')
+  })
+})*/
+
+console.log(result)
+
+fs.writeFileSync('some.txt', result + '\nHello World!') // created file and added text inside (rewrite) / запускається синхронно
+
