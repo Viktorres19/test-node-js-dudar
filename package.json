@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/Viktorres19/test-node-js-dudar/issues"
   },
-  "homepage": "https://github.com/Viktorres19/test-node-js-dudar#readme"
+  "homepage": "https://github.com/Viktorres19/test-node-js-dudar#readme",
+  "dependencies": {
+    "currency-converter-lt": "^2.0.0-beta.0"
+  }
 }
