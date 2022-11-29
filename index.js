@@ -1,22 +1,23 @@
-const http = require('http')
-const fs = require('fs')
+const express = require('express')
 
-let server = http.createServer((req, res) => {
-  res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'})
+const app = express()
 
-  if(req.url == '/')
-    fs.createReadStream('./templates/index.html').pipe(res)
-  else if(req.url == '/about')
-    fs.createReadStream('./templates/about.html').pipe(res)
-  else
-    fs.createReadStream('./templates/error.html').pipe(res)
+//відслідковуємо головну сторінку
+app.get('/', (req, res) => {
+  res.send('This home page')
+})
+
+app.get('/about', (req, res) => {
+  res.send('This is about page')
+})
+//динамічна адреса
+app.get('/user/:username/:id', (req, res) => {
+  //беремо параметри з адреси і виводимо на сторінку
+  res.send(`User ID: ${req.params.id}. Username: ${req.params.username}`)
 })
 
 const PORT = 3000
-const HOST = '127.0.0.1' //localhost
 
-server.listen(PORT, HOST, () => {
-  console.log(`Сервер запущено: http://${HOST}:${PORT}`)
+app.listen(PORT, () => {
+  console.log(`Server started: http://localhost:${PORT}`)
 })
-
-
