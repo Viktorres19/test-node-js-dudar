@@ -1,0 +1,24 @@
+{
+  "name": "test-node-js-dudar",
+  "version": "1.0.0",
+  "description": "learning node js project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Viktorres19/test-node-js-dudar.git"
+  },
+  "keywords": [
+    "node",
+    "js"
+  ],
+  "author": "Viktorres",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Viktorres19/test-node-js-dudar/issues"
+  },
+  "homepage": "https://github.com/Viktorres19/test-node-js-dudar#readme"
+}
