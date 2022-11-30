@@ -1,19 +1,21 @@
 const express = require('express')
 
 const app = express()
+// додаємо налаштування
+app.set('view engine', 'ejs')
 
 //відслідковуємо головну сторінку
 app.get('/', (req, res) => {
-  res.send('This home page')
+  // res.sendFile(__dirname + '/index.html')
+  res.render('index')
 })
 
 app.get('/about', (req, res) => {
-  res.send('This is about page')
+  res.render('about')
 })
-//динамічна адреса
-app.get('/user/:username/:id', (req, res) => {
-  //беремо параметри з адреси і виводимо на сторінку
-  res.send(`User ID: ${req.params.id}. Username: ${req.params.username}`)
+app.get('/user/:username', (req, res) => {
+  let data = {username: req.params.username, hobbies: [ 'Football', 'Skate', 'Baskeball' ] }
+  res.render('user', data)
 })
 
 const PORT = 3000
