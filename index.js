@@ -3,6 +3,8 @@ const express = require('express')
 const app = express()
 // додаємо налаштування
 app.set('view engine', 'ejs')
+// проміжне ПО - Middleware
+app.use(express.static('public'))
 
 //відслідковуємо головну сторінку
 app.get('/', (req, res) => {
